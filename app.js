@@ -21,7 +21,7 @@ inquirer.prompt([
     {
         type: "input",
         message: "What is your employee ID number?",
-        name: "employeeID"
+        name: "id"
     },
     {
         type: "input",
@@ -31,43 +31,52 @@ inquirer.prompt([
     {
         type: "list",
         message: "What is your employment position?",
-        name: "empTitle",
+        name: "role",
         choices: [
             "Manager",
             "Engineer",
             "Intern"
         ]
     }
-]).then(function(data) {
+]).then(function(empData) {
     
-if (empTitle === "Manager"){
+if (role === "Manager"){
     inquirer.prompt([
         {
             type: "input",
             message: "What is your office number?",
-            name: "officeNum"
+            name: "office"
         }
-    ]) // Validate numeric
+    ])
+    .then(function(mngData) {
+        Manager()
+    })
 }
 
-if (empTitle === "Engineer") {
+if (role === "Engineer") {
     inquirer.prompt([
         {
             type: "input",
             message: "What is your GitHub username?",
-            name: "engineerGH"
+            name: "github"
         }
     ])
+    .then(function(engData) {
+        Engineer()
+    })
 }
 
-if (empTitle === "Intern") {
+if (role === "Intern") {
     inquirer.prompt([
         {
             type: "input",
             message: "What is the name of the college that you are attending?",
-            name: "internCollege"
+            name: "college"
         }
     ])
+    .then(function(intData) {
+        Intern()
+    })
 }
 })
 
