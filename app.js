@@ -45,7 +45,7 @@ if (role === "Manager"){
         {
             type: "input",
             message: "What is your office number?",
-            name: "office"
+            name: "officeNumber"
         }
     ])
     .then(function(mngData) {
@@ -71,7 +71,7 @@ if (role === "Intern") {
         {
             type: "input",
             message: "What is the name of the college that you are attending?",
-            name: "college"
+            name: "school"
         }
     ])
     .then(function(intData) {
