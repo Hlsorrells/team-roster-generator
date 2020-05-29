@@ -38,49 +38,51 @@ inquirer.prompt([
             "Intern"
         ]
     }
-]).then(function(empData) {
-    
-if (role === "Manager"){
-    inquirer.prompt([
-        {
-            type: "input",
-            message: "What is your office number?",
-            name: "officeNumber"
-        }
-    ])
-    .then(function(mngData) {
-        Manager()
-    })
-}
+])
+    // and to create objects for each team member (using the correct classes as blueprints!)
+    .then(function (empData) {
 
-if (role === "Engineer") {
-    inquirer.prompt([
-        {
-            type: "input",
-            message: "What is your GitHub username?",
-            name: "github"
+        if (role === "Manager") {
+            inquirer.prompt([
+                {
+                    type: "input",
+                    message: "What is your office number?",
+                    name: "officeNumber"
+                }
+            ])
+                .then(function (mngData) {
+                    Manager()
+                })
         }
-    ])
-    .then(function(engData) {
-        Engineer()
-    })
-}
 
-if (role === "Intern") {
-    inquirer.prompt([
-        {
-            type: "input",
-            message: "What is the name of the college that you are attending?",
-            name: "school"
+        if (role === "Engineer") {
+            inquirer.prompt([
+                {
+                    type: "input",
+                    message: "What is your GitHub username?",
+                    name: "github"
+                }
+            ])
+                .then(function (engData) {
+                    Engineer()
+                })
         }
-    ])
-    .then(function(intData) {
-        Intern()
-    })
-}
-})
 
-// and to create objects for each team member (using the correct classes as blueprints!)
+        if (role === "Intern") {
+            inquirer.prompt([
+                {
+                    type: "input",
+                    message: "What is the name of the college that you are attending?",
+                    name: "school"
+                }
+            ])
+                .then(function (intData) {
+                    Intern()
+                })
+        }
+    })
+
+
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
