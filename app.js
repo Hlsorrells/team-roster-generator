@@ -56,7 +56,6 @@ function appMenu() {
                     .then(function (answers) {
                         const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
                         team.push(manager);
-                        console.log(team);
                         addMember();
                     })
             }
@@ -87,7 +86,6 @@ function appMenu() {
                     .then(function (answers) {
                         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
                         team.push(engineer);
-                        console.log(team);
                         addMember();
                     })
             }
@@ -118,7 +116,6 @@ function appMenu() {
                     .then(function (answers) {
                         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
                         team.push(intern);
-                        console.log(team);
                         addMember();
                     })
             }
@@ -139,12 +136,8 @@ function addMember() {
     ]).then(function (answers) {
         if (answers.newMember === "Yes") {
             appMenu();
-            console.log("inside Yes")
-            console.log(team)
         } else {
             buildTeam(team)
-            console.log("inside No")
-            console.log(team)
         }
     })
 }
