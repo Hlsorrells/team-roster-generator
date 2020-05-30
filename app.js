@@ -57,6 +57,7 @@ function appMenu() {
                         const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
                         team.push(manager);
                         console.log(team);
+                        addMember();
                     })
             }
 
@@ -87,6 +88,7 @@ function appMenu() {
                         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
                         team.push(engineer);
                         console.log(team);
+                        addMember();
                     })
             }
 
@@ -117,10 +119,34 @@ function appMenu() {
                         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
                         team.push(intern);
                         console.log(team);
+                        addMember();
                     })
             }
         })
 }
 
+function addMember() {
+    inquirer.prompt([
+        {
+            type: "list",
+            message: "Would you like additional team members?",
+            name: "newMember",
+            choices: [
+                "Yes",
+                "No"
+            ]
+        }
+    ]).then(function (answers) {
+        if (answers.newMember === "Yes") {
+            appMenu();
+            console.log("inside Yes")
+            console.log(team)
+        } else {
+            buildTeam(team)
+            console.log("inside No")
+            console.log(team)
+        }
+    })
+  }  
 
 appMenu();
