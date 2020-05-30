@@ -3,14 +3,41 @@ This Node application utilizes the command line interface which allows the user 
 
 ![](image/teamRosterGenerator.gif)
 
-## Installation
-There is a `package.json`, so make sure to `npm install`.
+## Table of Contents
 
-The dependencies are, [jest](https://jestjs.io/) for running the provided tests, and [inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user.
+* [Contributing](#contributing)
+* [Installation](#installation)
+* [Tests](#tests)
+* [Usage](#usage)
+  * [User Interface](user-interface)
+  * [Roster Output](roster-output)
+* [Screenshots](#screenshots)
+* [Questions](#questions)
+* [Authors](#author)
+
+## Contributing
+Go to GitHub repo and create a pull request or email the developer directly. See [Questions](#questions).
+
+## Installation
+There is a `package.json`, so make sure to `npm install`. The dependencies are, [jest](https://jestjs.io/) for running the provided tests, and [inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user.
+
+To install, please run the following command in terminal:
+  
+```
+npm i
+```
+
+## Tests
+To test installation, run the following command in terminal:
+
+```
+npm run test
+```
 
 ## Usage
 This application can be used to create a software engineering team roster page in HTML. The application will prompt the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. When the user has completed building the team, the application will create an HTML file that displays a nicely formatted team roster based on the information provided by the user.
 
+### User Interface
 The user needs to be prepared to answer the following questions for each type of team member.
 
 * Every Team Member
@@ -27,7 +54,7 @@ The user needs to be prepared to answer the following questions for each type of
 * Intern
     - College Name
 
-## Roster output
+### Roster output
 
 The application will generate a `team.html` page in the `output` directory, that displays a nicely formatted team roster.
 
