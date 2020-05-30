@@ -147,6 +147,10 @@ function addMember() {
             console.log(team)
         }
     })
-  }  
+}
+
+function buildTeam() {
+    fs.writeFileSync(outputPath, render(team), "utf-8")
+}
 
 appMenu();
